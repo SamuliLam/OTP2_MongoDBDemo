@@ -68,9 +68,6 @@ public class HelloController {
         String id = idField.getText();
         Document doc = QuickStart.readDocumentById(id);
         if (doc != null) {
-            nameField.setText(doc.getString("name"));
-            ageField.setText(String.valueOf(doc.getInteger("age")));
-            cityField.setText(doc.getString("city"));
             showAlert("Document read successfully", doc.toJson());
         } else {
             showAlert("No matching documents found", null);
